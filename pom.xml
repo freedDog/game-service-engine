@@ -1,25 +1,110 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<description>游戏通信、脚本等核心基础包</description>
+	<groupId>game-service-engine</groupId>
+	<artifactId>game-service-engine</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <groupId>game-service-engine</groupId>
-  <artifactId>game-service-engine</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<name>game-service-engine</name>
+	<url>http://maven.apache.org</url>
 
-  <name>game-service-engine</name>
-  <url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+	<dependencies>
+		<!--https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-simplexml   用于解析 xml 配置文档 -->
+		<dependency>
+			<groupId>com.squareup.retrofit2</groupId>
+			<artifactId>converter-simplexml</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-client    java ActiveMQ 消息处理-->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-client</artifactId>
+			<version>5.14.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java  网络通信处理 -->
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient http客户端处理 -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mongodb.morphia/morphia  Morphia注解  官方 Java 驱动程序可用于与 MongoDB 交互--> 
+		<dependency>
+			<groupId>org.mongodb.morphia</groupId>
+			<artifactId>morphia</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail javax.mail发送邮件-->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+		<!-- redisson 添加了netty -->
+		<!-- <dependency> <groupId>io.netty</groupId> <artifactId>netty-all</artifactId> 
+			<version>4.1.14.Final</version> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.mina/mina-http   使用mina解析http协议-->
+		<dependency>
+			<groupId>org.apache.mina</groupId>
+			<artifactId>mina-http</artifactId>
+			<version>2.0.19</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.redisson/redisson   Redisson是架设在Redis基础上的一个Java驻内存数据网格（In-Memory Data Grid）。【Redis官方推荐】-->
+		<dependency>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/redis.clients/jedis  Redis java客户端-->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.9.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12  日志 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.18</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson JSON格式字符串与JSON对象之间的转换-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.34</version>
+		</dependency> 
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+			<!-- https://mvnrepository.com/artifact/org.apache.felix/maven-bundle-plugin  pom.xml 配置文件异常报错插件 -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
