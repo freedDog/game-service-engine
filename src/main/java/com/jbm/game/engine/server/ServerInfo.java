@@ -92,6 +92,7 @@ public class ServerInfo {
 	 * 获取连接列表中最空闲的有效的连接
 	 * @return
 	 */
+	@JSONField(serialize = false)
 	public IoSession getMostIdleIoSession() {
 		if(sessions==null) {
 			return null;
@@ -164,7 +165,7 @@ public class ServerInfo {
 		this.session=session;
 	}
 	
-	
+	@JSONField(serialize = false)
 	public String getHttpUrl(String content) {
 		StringBuilder sb=new StringBuilder("http://").append(getIp()).append(":").append(getHttpPort()).append("/")
 				.append(content);

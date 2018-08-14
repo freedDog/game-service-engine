@@ -88,7 +88,7 @@ public class HttpServerDecoderImpl extends CumulativeProtocolDecoder{
 		final String requestLine=headerFields[0];
 		final Map<String,String> generalHeaders=new HashMap<String, String>();
 		
-		for(int i=0;i<headerFields.length;i++) {
+		for(int i=1;i<headerFields.length;i++) {
 			final String[] header=HEADER_VALUE_PATTERN.split(headerFields[i]);
 			generalHeaders.put(header[0].toLowerCase(),header[1].trim());
 		}
