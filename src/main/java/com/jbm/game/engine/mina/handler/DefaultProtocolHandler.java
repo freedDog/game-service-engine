@@ -123,9 +123,9 @@ public abstract class DefaultProtocolHandler implements IoHandler{
 		handler.setCreateTime(System.currentTimeMillis());
 		Executor executor=getService().getExecutor(handlerEntity.thread());
 		if(executor==null) {
-			if(logger.isWarnEnabled()) {
-				logger.warn("处理器{} 没有分配线程",handler.getClass().getName());
-			}
+//			if(logger.isDebugEnabled()) {
+//				logger.debug("处理器{} 没有分配线程",handler.getClass().getName());
+//			}
 			handler.run();
 			return;
 		}

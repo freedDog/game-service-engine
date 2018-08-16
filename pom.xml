@@ -4,7 +4,7 @@
 	<description>游戏通信、脚本等核心基础包</description>
 	<groupId>game-service-engine</groupId>
 	<artifactId>game-service-engine</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>releases</version>
 	<packaging>jar</packaging>
 
 	<name>game-service-engine</name>
